@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+Park360 | Otoparklar
+</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+<div class="container nav-container">
+
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Park360">
+</a>
+
+<nav class="nav-links">
+
+<a href="index.html">
+Ana Sayfa
+</a>
+
+<a href="otoparklar.html" class="active">
+Otoparklar
+</a>
+
+<a href="park-et.html">
+Park Et
+</a>
+
+<a href="ucretler.html">
+Ücretler
+</a>
+
+<a href="kayitlar.html">
+Kayıtlar
+</a>
+
+<a href="iletisim.html">
+İletişim
+</a>
+
+</nav>
+
+<a href="park-et.html" class="nav-button">
+Park Et
+</a>
+
+</div>
+</header>
+
+
+<!-- ================= SAYFA BAŞLIĞI ================= -->
+<section class="page-hero">
+<div class="container">
+
+<span class="page-tag">
+PARK360
+</span>
+
+<h1>
+Size Uygun <strong>Otoparkı Bulun</strong>
+</h1>
+
+<p>
+Konumunuza ve ihtiyacınıza uygun otoparkları keşfedin,
+müsaitlik durumunu kontrol edin ve kolayca park edin.
+</p>
+
+</div>
+</section>
+
+
+<!-- ================= ARAMA / FİLTRE ================= -->
+<section class="parking-search-section">
+<div class="container">
+
+<div class="parking-search-box">
+
+<div class="search-input-wrapper">
+
+<span class="search-icon">
+⌕
+</span>
+
+<input
+type="text"
+id="parkingSearch"
+placeholder="Otopark adı veya bölge ara..."
+>
+
+</div>
+
+
+<select id="districtFilter">
+
+<option value="all">
+Tüm Bölgeler
+</option>
+
+<option value="osmangazi">
+Osmangazi
+</option>
+
+<option value="nilufer">
+Nilüfer
+</option>
+
+<option value="yildirim">
+Yıldırım
+</option>
+
+</select>
+
+
+<select id="statusFilter">
+
+<option value="all">
+Tüm Durumlar
+</option>
+
+<option value="open">
+Açık
+</option>
+
+<option value="available">
+Müsait Yeri Var
+</option>
+
+</select>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= OTOPARKLAR ================= -->
+<main class="parking-list-section">
+
+<div class="container">
+
+
+<!-- BAŞLIK -->
+<div class="parking-list-header">
+
+<div>
+
+<span>
+PARK NOKTALARI
+</span>
+
+<h2>
+Otoparklar
+</h2>
+
+</div>
+
+<div class="parking-count">
+
+<strong>
+12
+</strong>
+
+<span>
+otopark bulundu
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ================= KARTLAR ================= -->
+<div class="parking-list-grid">
+
+
+<!-- OTOPARK 1 -->
+<article
+class="parking-list-card"
+data-name="Park360 Downtown"
+data-district="osmangazi"
+data-status="open"
+>
+
+<div class="parking-list-image">
+
+<img
+src="images/down.jpg"
+alt="Park360 Downtown"
+>
+
+<span class="parking-open">
+● Açık
+</span>
+
+</div>
+
+
+<div class="parking-list-content">
+
+<div class="parking-list-top">
+
+<div>
+
+<span class="parking-location">
+Osmangazi / Bursa
+</span>
+
+<h3>
+Park360 Downtown
+</h3>
+
+</div>
+
+<span class="parking-rating">
+★ 4.8
+</span>
+
+</div>
+
+
+<p class="parking-description">
+Şehir merkezinde kolay ulaşım sağlayan,
+7/24 açık modern otopark.
+</p>
+
+
+<div class="parking-metrics">
+
+<div>
+<span>Kapasite</span>
+<strong>420</strong>
+</div>
+
+<div>
+<span>Müsait</span>
+<strong>186</strong>
+</div>
+
+<div>
+<span>Ücret</span>
+<strong>₺40/saat</strong>
+</div>
+
+</div>
+
+
+<div class="parking-list-bottom">
+
+<span>
+7/24 Açık
+</span>
+
+<a href="otopark-detay.html?parking=downtown">
+Detayları Gör →
+</a>
+
+</div>
+
+</div>
+</article>
+
+
+<!-- OTOPARK 2 -->
+<article
+class="parking-list-card"
+data-name="Park360 Nilüfer"
+data-district="nilufer"
+data-status="open"
+>
+
+<div class="parking-list-image">
+
+<img
+src="images/nill.jpg"
+alt="Park360 Nilüfer"
+>
+
+<span class="parking-open">
+● Açık
+</span>
+
+</div>
+
+
+<div class="parking-list-content">
+
+<div class="parking-list-top">
+
+<div>
+
+<span class="parking-location">
+Nilüfer / Bursa
+</span>
+
+<h3>
+Park360 Nilüfer
+</h3>
+
+</div>
+
+<span class="parking-rating">
+★ 4.7
+</span>
+
+</div>
+
+
+<p class="parking-description">
+İş ve alışveriş bölgelerine yakın,
+güvenli ve kolay erişilebilir otopark.
+</p>
+
+
+<div class="parking-metrics">
+
+<div>
+<span>Kapasite</span>
+<strong>280</strong>
+</div>
+
+<div>
+<span>Müsait</span>
+<strong>94</strong>
+</div>
+
+<div>
+<span>Ücret</span>
+<strong>₺35/saat</strong>
+</div>
+
+</div>
+
+
+<div class="parking-list-bottom">
+
+<span>
+06:00 – 00:00
+</span>
+
+<a href="otopark-detay.html?parking=nilufer">
+Detayları Gör →
+</a>
+
+</div>
+
+</div>
+</article>
+
+
+<!-- OTOPARK 3 -->
+<article
+class="parking-list-card"
+data-name="Park360 Çarşı"
+data-district="osmangazi"
+data-status="open"
+>
+
+<div class="parking-list-image">
+
+<img
+src="images/car.jpg"
+alt="Park360 Çarşı"
+>
+
+<span class="parking-open">
+● Açık
+</span>
+
+</div>
+
+
+<div class="parking-list-content">
+
+<div class="parking-list-top">
+
+<div>
+
+<span class="parking-location">
+Osmangazi / Bursa
+</span>
+
+<h3>
+Park360 Çarşı
+</h3>
+
+</div>
+
+<span class="parking-rating">
+★ 4.6
+</span>
+
+</div>
+
+
+<p class="parking-description">
+Çarşı merkezinde bulunan, kısa süreli
+park için ideal otopark.
+</p>
+
+
+<div class="parking-metrics">
+
+<div>
+<span>Kapasite</span>
+<strong>160</strong>
+</div>
+
+<div>
+<span>Müsait</span>
+<strong>28</strong>
+</div>
+
+<div>
+<span>Ücret</span>
+<strong>₺30/saat</strong>
+</div>
+
+</div>
+
+
+<div class="parking-list-bottom">
+
+<span>
+7/24 Açık
+</span>
+
+<a href="otopark-detay.html?parking=carsi">
+Detayları Gör →
+</a>
+
+</div>
+
+</div>
+</article>
+
+
+<!-- OTOPARK 4 -->
+<article
+class="parking-list-card"
+data-name="Park360 Yıldırım"
+data-district="yildirim"
+data-status="open"
+>
+
+<div class="parking-list-image">
+
+<img
+src="images/yıl.jpg"
+alt="Park360 Yıldırım"
+>
+
+<span class="parking-open">
+● Açık
+</span>
+
+</div>
+
+
+<div class="parking-list-content">
+
+<div class="parking-list-top">
+
+<div>
+
+<span class="parking-location">
+Yıldırım / Bursa
+</span>
+
+<h3>
+Park360 Yıldırım
+</h3>
+
+</div>
+
+<span class="parking-rating">
+★ 4.5
+</span>
+
+</div>
+
+
+<p class="parking-description">
+Bölgedeki yoğunluğu azaltmak için
+tasarlanmış geniş kapasiteli otopark.
+</p>
+
+
+<div class="parking-metrics">
+
+<div>
+<span>Kapasite</span>
+<strong>310</strong>
+</div>
+
+<div>
+<span>Müsait</span>
+<strong>121</strong>
+</div>
+
+<div>
+<span>Ücret</span>
+<strong>₺30/saat</strong>
+</div>
+
+</div>
+
+
+<div class="parking-list-bottom">
+
+<span>
+7/24 Açık
+</span>
+
+<a href="otopark-detay.html?parking=yildirim">
+Detayları Gör →
+</a>
+
+</div>
+
+</div>
+</article>
+
+
+</div>
+
+
+<!-- ================= ALT BİLGİ ================= -->
+<div class="parking-info-banner">
+
+<div>
+
+<strong>
+Aradığınız otoparkı bulamadınız mı?
+</strong>
+
+<p>
+Yeni otopark noktalarımızı keşfetmek için
+Park360 ile iletişime geçebilirsiniz.
+</p>
+
+</div>
+
+<a href="iletisim.html">
+İletişime Geç →
+</a>
+
+</div>
+
+</div>
+</main>
+
+
+<!-- ================= CTA ================= -->
+<section class="cta-section">
+
+<div class="container cta-container">
+
+<div>
+
+<span>
+PARK360 İLE BAŞLAYIN
+</span>
+
+<h2>
+Park Yerinizi Şimdi Bulun
+</h2>
+
+<p>
+Size en uygun otoparkı keşfedin ve
+park işleminizi kolaylaştırın.
+</p>
+
+</div>
+
+<a href="park-et.html" class="btn-primary">
+Park Et
+</a>
+
+</div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+<div class="container footer-grid">
+
+
+<div class="footer-brand">
+
+<a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Park360">
+</a>
+
+<p>
+Şehrin her noktasında kolay ve güvenli
+otopark deneyimi.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Park360
+</h4>
+
+<a href="index.html">
+Ana Sayfa
+</a>
+
+<a href="otoparklar.html">
+Otoparklar
+</a>
+
+<a href="park-et.html">
+Park Et
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Bilgi
+</h4>
+
+<a href="ucretler.html">
+Ücretler
+</a>
+
+<a href="kayitlar.html">
+Kayıtlar
+</a>
+
+<a href="iletisim.html">
+İletişim
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+İletişim
+</h4>
+
+<p>
+Bursa, Türkiye
+</p>
+
+<p>
+0850 000 36 00
+</p>
+
+<p>
+info@park360.com
+</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div class="container">
+
+© 2026 Park360. Tüm hakları saklıdır.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

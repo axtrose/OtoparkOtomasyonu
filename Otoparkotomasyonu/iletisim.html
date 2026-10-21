@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Park360</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Park360">
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="otoparklar.html">Otoparklar</a>
+                <a href="park-et.html">Park Et</a>
+                <a href="ucretler.html">Ücretler</a>
+                <a href="kayitlar.html">Kayıtlar</a>
+                <a href="iletisim.html" class="active">İletişim</a>
+            </div>
+
+            <a href="park-et.html" class="nav-button">Park Et</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-tag">PARK360</span>
+            <h1>
+                Bizimle <strong>İletişime Geçin</strong>
+            </h1>
+            <p>
+                Sorularınız, önerileriniz veya destek talepleriniz için
+                Park360 ekibiyle iletişime geçebilirsiniz.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= İLETİŞİM ================= -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- İLETİŞİM BİLGİLERİ -->
+                <div class="contact-info">
+                    <span class="contact-label">İLETİŞİM</span>
+                    <h2>
+                        Size Nasıl<br>
+                        <strong>Yardımcı Olabiliriz?</strong>
+                    </h2>
+
+                    <p class="contact-description">
+                        Park360 hakkında bilgi almak, rezervasyonlarınızla
+                        ilgili destek almak veya görüşlerinizi paylaşmak
+                        için bize ulaşabilirsiniz.
+                    </p>
+
+                    <div class="contact-items">
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <span>MERKEZ</span>
+                                <strong>Bursa, Türkiye</strong>
+                                <p>Park360 Genel Merkezi</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <span>TELEFON</span>
+                                <strong>0555 555 55 55</strong>
+                                <p>Her gün 09:00 - 22:00</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️️</div>
+                            <div>
+                                <span>E-POSTA</span>
+                                <strong>info@park360.com</strong>
+                                <p>En kısa sürede dönüş yapıyoruz.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <div class="contact-form-card">
+                    <div class="contact-form-header">
+                        <span>BİZE YAZIN</span>
+                        <h3>Mesaj Gönderin</h3>
+                        <p>Formu doldurun, ekibimiz sizinle iletişime geçsin.</p>
+                    </div>
+
+                    <form id="contactForm">
+
+                        <div class="contact-form-row">
+                            <div class="contact-form-group">
+                                <label for="contactName">Ad Soyad</label>
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    placeholder="Adınız ve soyadınız"
+                                    required>
+                            </div>
+
+                            <div class="contact-form-group">
+                                <label for="contactEmail">E-posta</label>
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    placeholder="ornek@email.com"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-group">
+                            <label for="contactSubject">Konu</label>
+                            <select id="contactSubject" required>
+                                <option value="">Konu seçiniz</option>
+                                <option value="reservation">Rezervasyon</option>
+                                <option value="parking">Otopark Bilgisi</option>
+                                <option value="payment">Ücret ve Ödeme</option>
+                                <option value="support">Teknik Destek</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+
+                        <div class="contact-form-group">
+                            <label for="contactMessage">Mesajınız</label>
+                            <textarea
+                                id="contactMessage"
+                                rows="6"
+                                placeholder="Mesajınızı buraya yazabilirsiniz..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary contact-submit">
+                            Mesajı Gönder
+                        </button>
+
+                        <p class="contact-form-note">
+                            Bilgileriniz güvenli şekilde işlenmektedir.
+                        </p>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= DESTEK KARTLARI ================= -->
+    <section class="contact-support-section">
+        <div class="container">
+
+            <div class="contact-support-heading">
+                <span class="contact-label">PARK360 DESTEK</span>
+                <h2>
+                    İhtiyacınız Olduğunda <strong>Yanınızdayız</strong>
+                </h2>
+            </div>
+
+            <div class="contact-support-grid">
+
+                <div class="contact-support-card">
+                    <div class="support-number">01</div>
+                    <h3>Hızlı Destek</h3>
+                    <p>
+                        Sorularınız için müşteri destek ekibimiz
+                        size yardımcı olmaya hazır.
+                    </p>
+                </div>
+
+                <div class="contact-support-card">
+                    <div class="support-number">02</div>
+                    <h3>Güvenli Hizmet</h3>
+                    <p>
+                        Park ve rezervasyon işlemlerinizde
+                        güvenli ve şeffaf hizmet sunuyoruz.
+                    </p>
+                </div>
+
+                <div class="contact-support-card">
+                    <div class="support-number">03</div>
+                    <h3>Kolay İletişim</h3>
+                    <p>
+                        Telefon, e-posta veya iletişim formu
+                        üzerinden bize ulaşabilirsiniz.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="detail-cta">
+        <div class="container">
+            <div class="detail-cta-content">
+                <span class="section-label">PARK360</span>
+                <h2>
+                    Park Etmek Artık<br>
+                    Çok Daha Kolay
+                </h2>
+                <p>
+                    Size en uygun otoparkı bulun ve park yerinizi
+                    hemen ayırın.
+                </p>
+                <a href="park-et.html" class="btn-primary">
+                    Park Et
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 Park360</span>
+                <span>Güvenli • Hızlı • Kolay</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="script.js"></script>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            alert(
+                "Mesajınız başarıyla gönderildi. " +
+                "En kısa sürede sizinle iletişime geçeceğiz."
+            );
+
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
