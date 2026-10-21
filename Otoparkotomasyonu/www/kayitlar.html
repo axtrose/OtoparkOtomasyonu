@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıtlar | Park360</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Park360">
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="otoparklar.html">Otoparklar</a>
+                <a href="park-et.html">Park Et</a>
+                <a href="ucretler.html">Ücretler</a>
+                <a href="kayitlar.html" class="active">Kayıtlar</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+
+            <a href="park-et.html" class="nav-button">Park Et</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-tag">PARK360</span>
+            <h1>
+                Park <strong>Kayıtlarınız</strong>
+            </h1>
+            <p>
+                Geçmiş ve aktif park işlemlerinizi görüntüleyin,
+                rezervasyon bilgilerinizi kolayca takip edin.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= KAYITLAR ================= -->
+    <section class="records-section">
+        <div class="container">
+
+            <div class="records-header">
+                <div>
+                    <span class="records-label">PARK GEÇMİŞİ</span>
+                    <h2>Kayıtlarınız</h2>
+                    <p>Park360 üzerinden gerçekleştirdiğiniz park işlemleri.</p>
+                </div>
+
+                <a href="park-et.html" class="btn-primary">
+                    Yeni Park Oluştur
+                </a>
+            </div>
+
+            <!-- Aktif kayıt -->
+            <div class="record-active">
+                <div class="record-active-icon">P</div>
+
+                <div class="record-active-content">
+                    <span class="record-status">AKTİF REZERVASYON</span>
+                    <h3>Park360 Downtown</h3>
+                    <p>Osmangazi / Bursa</p>
+                </div>
+
+                <div class="record-active-info">
+                    <span>Plaka</span>
+                    <strong>16 ABC 123</strong>
+                </div>
+
+                <div class="record-active-info">
+                    <span>Giriş</span>
+                    <strong>10:30</strong>
+                </div>
+
+                <div class="record-active-price">
+                    <span>Tahmini Tutar</span>
+                    <strong>₺120</strong>
+                </div>
+            </div>
+
+            <!-- Kayıt tablosu -->
+            <div class="records-card">
+
+                <div class="records-card-header">
+                    <div>
+                        <h3>Geçmiş Park İşlemleri</h3>
+                        <p>Son park kayıtlarınız</p>
+                    </div>
+
+                    <select id="recordFilter">
+                        <option value="all">Tüm Kayıtlar</option>
+                        <option value="completed">Tamamlanan</option>
+                        <option value="cancelled">İptal Edilen</option>
+                    </select>
+                </div>
+
+                <div class="records-table-wrapper">
+                    <table class="records-table">
+                        <thead>
+                            <tr>
+                                <th>Otopark</th>
+                                <th>Tarih</th>
+                                <th>Süre</th>
+                                <th>Plaka</th>
+                                <th>Tutar</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recordsBody">
+
+                            <tr data-status="completed">
+                                <td>
+                                    <strong>Park360 Nilüfer</strong>
+                                    <span>Nilüfer / Bursa</span>
+                                </td>
+                                <td>28 Eylül 2026</td>
+                                <td>3 Saat</td>
+                                <td>16 ABC 123</td>
+                                <td><strong>₺105</strong></td>
+                                <td>
+                                    <span class="record-badge completed">
+                                        Tamamlandı
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr data-status="completed">
+                                <td>
+                                    <strong>Park360 Çarşı</strong>
+                                    <span>Osmangazi / Bursa</span>
+                                </td>
+                                <td>24 Eylül 2026</td>
+                                <td>2 Saat</td>
+                                <td>16 ABC 123</td>
+                                <td><strong>₺60</strong></td>
+                                <td>
+                                    <span class="record-badge completed">
+                                        Tamamlandı
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr data-status="cancelled">
+                                <td>
+                                    <strong>Park360 Yıldırım</strong>
+                                    <span>Yıldırım / Bursa</span>
+                                </td>
+                                <td>19 Eylül 2026</td>
+                                <td>4 Saat</td>
+                                <td>16 ABC 123</td>
+                                <td><strong>₺120</strong></td>
+                                <td>
+                                    <span class="record-badge cancelled">
+                                        İptal Edildi
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr data-status="completed">
+                                <td>
+                                    <strong>Park360 Downtown</strong>
+                                    <span>Osmangazi / Bursa</span>
+                                </td>
+                                <td>15 Eylül 2026</td>
+                                <td>5 Saat</td>
+                                <td>16 ABC 123</td>
+                                <td><strong>₺200</strong></td>
+                                <td>
+                                    <span class="record-badge completed">
+                                        Tamamlandı
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Bilgi kartları -->
+            <div class="records-info-grid">
+
+                <div class="records-info-card">
+                    <div class="records-info-number">01</div>
+                    <h3>Kayıtlarınızı Takip Edin</h3>
+                    <p>
+                        Geçmiş park işlemlerinizi tek bir ekrandan
+                        kolayca görüntüleyebilirsiniz.
+                    </p>
+                </div>
+
+                <div class="records-info-card">
+                    <div class="records-info-number">02</div>
+                    <h3>Ücretleri Görüntüleyin</h3>
+                    <p>
+                        Her park işleminin süresini ve ödediğiniz
+                        tutarı kayıtlarınız üzerinden takip edin.
+                    </p>
+                </div>
+
+                <div class="records-info-card">
+                    <div class="records-info-number">03</div>
+                    <h3>Yeni Park Planlayın</h3>
+                    <p>
+                        Yeni bir rezervasyon oluşturmak için
+                        Park Et sayfasından hızlıca işlem yapabilirsiniz.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="detail-cta">
+        <div class="container">
+            <div class="detail-cta-content">
+                <span class="section-label">PARK360</span>
+                <h2>
+                    Park İşlemlerinizi<br>
+                    Kolayca Yönetin
+                </h2>
+                <p>
+                    Park360 ile park geçmişinizi takip edin ve
+                    yeni park yerinizi kolayca planlayın.
+                </p>
+                <a href="park-et.html" class="btn-primary">
+                    Park Et
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 Park360</span>
+                <span>Güvenli • Hızlı • Kolay</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+    const recordFilter = document.getElementById("recordFilter");
+    const recordsBody = document.getElementById("recordsBody");
+
+    let reservations =
+        JSON.parse(localStorage.getItem("park360Reservations")) || [];
+
+    // ================= YENİ REZERVASYONLARI GÖSTER =================
+
+    function loadReservations() {
+
+        reservations.forEach(reservation => {
+
+            const row = document.createElement("tr");
+
+            row.dataset.status = "active";
+
+            row.innerHTML = `
+                <td>
+                    <strong>${reservation.parkingName}</strong>
+                    <span>Park360 / Bursa</span>
+                </td>
+
+                <td>${reservation.date}</td>
+
+                <td>${reservation.duration} Saat</td>
+
+                <td>${reservation.plate}</td>
+
+                <td>
+                    <strong>₺${reservation.price}</strong>
+                </td>
+
+                <td>
+                    <span class="record-badge completed">
+                        Aktif
+                    </span>
+
+                    <button
+                        onclick="cancelReservation(${reservation.id})"
+                        style="
+                            margin-left:10px;
+                            padding:6px 10px;
+                            border:none;
+                            border-radius:6px;
+                            cursor:pointer;
+                        ">
+                        İptal Et
+                    </button>
+                </td>
+            `;
+
+            recordsBody.prepend(row);
+        });
+    }
+
+    // ================= REZERVASYON İPTAL =================
+
+    function cancelReservation(id) {
+
+        const reservation =
+            reservations.find(
+                item => item.id === id
+            );
+
+        if (!reservation) {
+            return;
+        }
+
+        const confirmation =
+            confirm(
+                "Bu rezervasyonu iptal etmek istediğinize emin misiniz?"
+            );
+
+        if (!confirmation) {
+            return;
+        }
+
+        // Rezervasyonu listeden kaldır
+
+        reservations =
+            reservations.filter(
+                item => item.id !== id
+            );
+
+        localStorage.setItem(
+            "park360Reservations",
+            JSON.stringify(reservations)
+        );
+
+        // ================= BOŞ YERİ GERİ EKLE =================
+
+        let parkingSpaces =
+            JSON.parse(
+                localStorage.getItem(
+                    "park360ParkingSpaces"
+                )
+            ) || {
+                downtown: 186,
+                nilufer: 94,
+                "carsı": 28,
+                yildirim: 121
+            };
+
+        parkingSpaces[reservation.parking]++;
+
+        localStorage.setItem(
+            "park360ParkingSpaces",
+            JSON.stringify(parkingSpaces)
+        );
+
+        alert(
+            "Rezervasyon iptal edildi. Boş yer tekrar kullanıma açıldı."
+        );
+
+        // Sayfayı yenile
+
+        location.reload();
+    }
+
+    // ================= FİLTRE =================
+
+    recordFilter.addEventListener(
+        "change",
+        function () {
+
+            const selected = this.value;
+
+            const records =
+                document.querySelectorAll(
+                    "#recordsBody tr"
+                );
+
+            records.forEach(record => {
+
+                if (
+                    selected === "all" ||
+                    record.dataset.status === selected
+                ) {
+
+                    record.style.display = "";
+
+                } else {
+
+                    record.style.display = "none";
+
+                }
+            });
+        }
+    );
+
+    // Sayfa açıldığında kayıtları getir
+
+    loadReservations();
+</script>
+</body>
+</html>

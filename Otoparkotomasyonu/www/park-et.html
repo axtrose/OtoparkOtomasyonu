@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Et | Park360</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Park360">
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="otoparklar.html">Otoparklar</a>
+                <a href="park-et.html" class="active">Park Et</a>
+                <a href="ucretler.html">Ücretler</a>
+                <a href="kayitlar.html">Kayıtlar</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+
+            <a href="park-et.html" class="nav-button">Park Et</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="page-tag">PARK360</span>
+            <h1>Park Yerinizi <strong>Şimdi Ayırın</strong></h1>
+            <p>
+                Size en uygun otoparkı seçin, tarih ve saat bilgilerinizi belirleyin
+                ve park işleminizi kolayca planlayın.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= REZERVASYON FORMU VE ÖZET ================= -->
+    <section class="parking-booking-section">
+        <div class="container">
+
+            <div class="booking-layout">
+
+                <!-- Form Kartı -->
+                <div class="booking-form-card">
+                    <div class="booking-card-header">
+                        <span class="section-label">PARK REZERVASYONU</span>
+                        <h2>Park Bilgilerinizi Girin</h2>
+                        <p>
+                            Park etmek istediğiniz otoparkı ve zamanı seçerek
+                            rezervasyonunuzu oluşturabilirsiniz.
+                        </p>
+                    </div>
+
+                    <form id="parkingForm">
+                        <div class="form-group">
+                            <label for="parkingSelect">Otopark Seçin</label>
+                            <select id="parkingSelect" required>
+                                <option value="">Otopark seçiniz</option>
+                                <option value="downtown">Park360 Downtown</option>
+                                <option value="nilufer">Park360 Nilüfer</option>
+                                <option value="carsı">Park360 Çarşı</option>
+                                <option value="yildirim">Park360 Yıldırım</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parkDate">Park Tarihi</label>
+                                <input type="date" id="parkDate" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="parkTime">Giriş Saati</label>
+                                <input type="time" id="parkTime" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="duration">Park Süresi</label>
+                                <select id="duration" required>
+                                    <option value="">Süre seçiniz</option>
+                                    <option value="1">1 Saat</option>
+                                    <option value="2">2 Saat</option>
+                                    <option value="3">3 Saat</option>
+                                    <option value="4">4 Saat</option>
+                                    <option value="6">6 Saat</option>
+                                    <option value="8">8 Saat</option>
+                                    <option value="12">12 Saat</option>
+                                    <option value="24">24 Saat</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vehicle">Araç Tipi</label>
+                                <select id="vehicle" required>
+                                    <option value="">Araç tipi seçiniz</option>
+                                    <option value="car">Otomobil</option>
+                                    <option value="suv">SUV / 4x4</option>
+                                    <option value="motorcycle">Motosiklet</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="plate">Araç Plakası</label>
+                            <input type="text" id="plate" placeholder="Örn. 16 ABC 123" maxlength="12" required>
+                        </div>
+
+                        <div class="booking-notice">
+                            <div class="notice-icon">i</div>
+                            <div>
+                                <strong>Rezervasyon Bilgisi</strong>
+                                <p>
+                                    Rezervasyon oluşturduğunuzda seçtiğiniz otoparkta
+                                    sizin için uygun bir park alanı ayrılır.
+                                </p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="detail-primary-button booking-submit">
+                            Rezervasyonu Oluştur
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Özet Kartı -->
+                <aside class="booking-summary-card">
+                    <span class="section-label">REZERVASYON ÖZETİ</span>
+
+                    <h3>Park Bilgileri</h3>
+
+                    <div class="summary-empty" id="summaryEmpty">
+                        <div class="summary-icon">P</div>
+                        <p>
+                            Otopark ve tarih bilgilerinizi seçtiğinizde
+                            rezervasyon özetiniz burada görüntülenecek.
+                        </p>
+                    </div>
+
+                    <div class="summary-details" id="summaryDetails">
+                        <div class="summary-row">
+                            <span>Otopark</span>
+                            <strong id="summaryParking">-</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Tarih</span>
+                            <strong id="summaryDate">-</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Giriş</span>
+                            <strong id="summaryTime">-</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Süre</span>
+                            <strong id="summaryDuration">-</strong>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-total">
+                            <span>Tahmini Tutar</span>
+                            <strong id="summaryPrice">₺0</strong>
+                        </div>
+                    </div>
+
+                    <div class="summary-footer">
+                        <span>Park360</span>
+                        <strong>Güvenli & Kolay Park</strong>
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= NASIL ÇALIŞIR ================= -->
+    <section class="parking-process-section">
+        <div class="container">
+            <div class="section-heading center">
+                <span class="section-label">NASIL ÇALIŞIR?</span>
+                <h2>Park Etmek Artık Daha Kolay</h2>
+                <p>Park360 ile birkaç basit adımda park yerinizi planlayın.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <span class="process-number">01</span>
+                    <h3>Otoparkınızı Seçin</h3>
+                    <p>Size uygun konumdaki Park360 otoparkını seçin.</p>
+                </div>
+
+                <div class="process-card">
+                    <span class="process-number">02</span>
+                    <h3>Bilgilerinizi Girin</h3>
+                    <p>Tarih, saat, süre ve araç bilgilerinizi belirleyin.</p>
+                </div>
+
+                <div class="process-card">
+                    <span class="process-number">03</span>
+                    <h3>Rezervasyonunuzu Oluşturun</h3>
+                    <p>Bilgilerinizi kontrol ederek park işleminizi tamamlayın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="detail-cta">
+        <div class="container">
+            <div class="detail-cta-content">
+                <span class="section-label">PARK360</span>
+                <h2>Şehrin Her Noktasında<br>Kolay Park Deneyimi</h2>
+                <p>Size en uygun otoparkı bulun ve yolculuğunuza zaman kaybetmeden devam edin.</p>
+                <a href="otoparklar.html" class="btn-primary">Otoparkları Gör</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>© 2026 Park360</span>
+                <span>Güvenli • Hızlı • Kolay</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+    const parkingForm = document.getElementById("parkingForm");
+
+    const parkingSelect = document.getElementById("parkingSelect");
+    const parkDate = document.getElementById("parkDate");
+    const parkTime = document.getElementById("parkTime");
+    const duration = document.getElementById("duration");
+
+    const summaryEmpty = document.getElementById("summaryEmpty");
+    const summaryDetails = document.getElementById("summaryDetails");
+
+    const summaryParking = document.getElementById("summaryParking");
+    const summaryDate = document.getElementById("summaryDate");
+    const summaryTime = document.getElementById("summaryTime");
+    const summaryDuration = document.getElementById("summaryDuration");
+    const summaryPrice = document.getElementById("summaryPrice");
+
+    // ================= FİYATLAR =================
+
+    const prices = {
+        downtown: 40,
+        nilufer: 35,
+        "carsı": 30,
+        yildirim: 30
+    };
+
+    // ================= BOŞ YERLER =================
+
+    const defaultParkingSpaces = {
+        downtown: 186,
+        nilufer: 94,
+        "carsı": 28,
+        yildirim: 121
+    };
+
+    // ================= ÖZET =================
+
+    function updateSummary() {
+
+        if (!parkingSelect.value) {
+            summaryEmpty.style.display = "block";
+            summaryDetails.style.display = "none";
+            return;
+        }
+
+        summaryEmpty.style.display = "none";
+        summaryDetails.style.display = "block";
+
+        const selectedText =
+            parkingSelect.options[parkingSelect.selectedIndex].text;
+
+        summaryParking.textContent = selectedText;
+
+        summaryDate.textContent =
+            parkDate.value ? parkDate.value : "-";
+
+        summaryTime.textContent =
+            parkTime.value ? parkTime.value : "-";
+
+        const hours = Number(duration.value);
+
+        summaryDuration.textContent =
+            hours ? hours + " Saat" : "-";
+
+        if (hours) {
+
+            const price =
+                prices[parkingSelect.value] * hours;
+
+            summaryPrice.textContent =
+                "₺" + price;
+
+        } else {
+
+            summaryPrice.textContent = "₺0";
+
+        }
+    }
+
+    // Form değişiklikleri
+
+    parkingSelect.addEventListener("change", updateSummary);
+    parkDate.addEventListener("change", updateSummary);
+    parkTime.addEventListener("change", updateSummary);
+    duration.addEventListener("change", updateSummary);
+
+    // ================= REZERVASYON =================
+
+    parkingForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const selectedParking =
+            parkingSelect.value;
+
+        const selectedParkingText =
+            parkingSelect.options[
+                parkingSelect.selectedIndex
+            ].text;
+
+        const hours =
+            Number(duration.value);
+
+        const price =
+            prices[selectedParking] * hours;
+
+        const plate =
+            document.getElementById("plate")
+                .value
+                .toUpperCase();
+
+        const vehicle =
+            document.getElementById("vehicle").value;
+
+        // ================= BOŞ YERLER =================
+
+        let parkingSpaces =
+            JSON.parse(
+                localStorage.getItem(
+                    "park360ParkingSpaces"
+                )
+            );
+
+        // İlk kullanımda başlangıç değerleri
+
+        if (!parkingSpaces) {
+
+            parkingSpaces = {
+                ...defaultParkingSpaces
+            };
+
+            localStorage.setItem(
+                "park360ParkingSpaces",
+                JSON.stringify(parkingSpaces)
+            );
+        }
+
+        // Boş yer kontrolü
+
+        if (parkingSpaces[selectedParking] <= 0) {
+
+            alert(
+                "Bu otoparkta şu anda boş yer bulunmamaktadır."
+            );
+
+            return;
+        }
+
+        // ================= REZERVASYON =================
+
+        const reservation = {
+
+            id: Date.now(),
+
+            parking: selectedParking,
+
+            parkingName: selectedParkingText,
+
+            date: parkDate.value,
+
+            time: parkTime.value,
+
+            duration: hours,
+
+            vehicle: vehicle,
+
+            plate: plate,
+
+            price: price
+        };
+
+        // Eski kayıtları getir
+
+        let reservations =
+            JSON.parse(
+                localStorage.getItem(
+                    "park360Reservations"
+                )
+            ) || [];
+
+        // Yeni kaydı ekle
+
+        reservations.push(reservation);
+
+        // Kaydet
+
+        localStorage.setItem(
+            "park360Reservations",
+            JSON.stringify(reservations)
+        );
+
+        // ================= BOŞ YERİ AZALT =================
+
+        parkingSpaces[selectedParking]--;
+
+        localStorage.setItem(
+            "park360ParkingSpaces",
+            JSON.stringify(parkingSpaces)
+        );
+
+        // ================= BAŞARILI =================
+
+        alert(
+            "Rezervasyonunuz başarıyla oluşturuldu!"
+        );
+
+        // Kayıtlar sayfasına gönder
+
+        window.location.href =
+            "kayitlar.html";
+    });
+
+    // ================= TARİH =================
+
+    const today =
+        new Date()
+            .toISOString()
+            .split("T")[0];
+
+    parkDate.min = today;
+
+    // Başlangıçta özet gizli
+
+    summaryDetails.style.display = "none";
+</script>
+</body>
+</html>

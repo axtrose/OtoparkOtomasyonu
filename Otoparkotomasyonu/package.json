@@ -7,6 +7,14 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^44.5.0"
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.5.0",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/ios": "^8.5.3"
   }
 }
