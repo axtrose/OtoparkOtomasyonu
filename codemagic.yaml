@@ -16,11 +16,10 @@ workflows:
       - name: Check project folder
         script: |
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
-          echo "Proje klasörü:"
+          echo "Proje klasoru:"
           pwd
-          echo "Xcode proje dosyaları:"
+          echo "Xcode proje dosyalari:"
           find ios -maxdepth 5 \( -name "*.xcworkspace" -o -name "*.xcodeproj" \) -print
-          echo "App klasörü:"
           ls -la ios/App
 
       - name: Install dependencies
@@ -33,18 +32,39 @@ workflows:
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
           npx cap sync ios
 
-      - name: Build iOS app
+      - name: Build unsigned iOS app
         script: |
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
+
           xcodebuild \
             -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
-            -archivePath "$CM_BUILD_DIR/Park360.xcarchive" \
+            -derivedDataPath "$CM_BUILD_DIR/DerivedData" \
             CODE_SIGNING_ALLOWED=NO \
-            archive
+            build
+
+      - name: Package IPA
+        script: |
+          APP_PATH="$CM_BUILD_DIR/DerivedData/Build/Products/Release-iphoneos/App.app"
+
+          if [ ! -d "$APP_PATH" ]; then
+            echo "HATA: App.app bulunamadi."
+            find "$CM_BUILD_DIR/DerivedData/Build/Products" -maxdepth 4 -name "*.app" -print
+            exit 1
+          fi
+
+          mkdir -p "$CM_BUILD_DIR/ipa/Payload"
+          cp -R "$APP_PATH" "$CM_BUILD_DIR/ipa/Payload/App.app"
+
+          cd "$CM_BUILD_DIR/ipa"
+          zip -r "$CM_BUILD_DIR/Park360.ipa" Payload
+
+          echo "Olusturulan IPA:"
+          ls -lh "$CM_BUILD_DIR/Park360.ipa"
 
     artifacts:
-      - "/Users/builder/clone/Park360.xcarchive/**"
+      - "Park360.ipa"
+      - "/Users/builder/clone/Park360.ipa"
