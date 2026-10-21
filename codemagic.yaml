@@ -13,6 +13,12 @@ workflows:
       xcode: latest
 
     scripts:
+      - name: Check project folder
+        script: |
+          pwd
+          ls -la
+          ls -la ios/App
+
       - name: Install dependencies
         script: npm install
 
@@ -27,9 +33,9 @@ workflows:
             -configuration Release \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
-            -archivePath build/Park360.xcarchive \
+            -archivePath "$CM_BUILD_DIR/Park360.xcarchive" \
             CODE_SIGNING_ALLOWED=NO \
             archive
 
     artifacts:
-      - build/Park360.xcarchive/**
+      - "*.xcarchive/**"
