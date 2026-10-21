@@ -8,7 +8,7 @@ workflows:
     environment:
       vars:
         BUNDLE_ID: com.park360.app
-        XCODE_WORKSPACE: ios/App/App.xcworkspace
+        XCODE_PROJECT: ios/App/App.xcodeproj
         XCODE_SCHEME: App
       xcode: latest
 
@@ -16,8 +16,11 @@ workflows:
       - name: Check project folder
         script: |
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
+          echo "Proje klasörü:"
           pwd
-          ls -la
+          echo "Xcode proje dosyaları:"
+          find ios -maxdepth 5 \( -name "*.xcworkspace" -o -name "*.xcodeproj" \) -print
+          echo "App klasörü:"
           ls -la ios/App
 
       - name: Install dependencies
@@ -30,18 +33,11 @@ workflows:
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
           npx cap sync ios
 
-      - name: Find Xcode workspace
-        script: |
-          cd "$CM_BUILD_DIR/Otoparkotomasyonu"
-          find ios -maxdepth 5 \( -name "*.xcworkspace" -o -name "*.xcodeproj" \) -print
-          ls -la ios
-          ls -la ios/App
-
       - name: Build iOS app
         script: |
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
           xcodebuild \
-            -workspace "$XCODE_WORKSPACE" \
+            -project "$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME" \
             -configuration Release \
             -sdk iphoneos \
