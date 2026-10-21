@@ -15,18 +15,24 @@ workflows:
     scripts:
       - name: Check project folder
         script: |
+          cd "$CM_BUILD_DIR/Otoparkotomasyonu"
           pwd
           ls -la
           ls -la ios/App
 
       - name: Install dependencies
-        script: npm install
+        script: |
+          cd "$CM_BUILD_DIR/Otoparkotomasyonu"
+          npm install
 
       - name: Sync Capacitor iOS
-        script: npx cap sync ios
+        script: |
+          cd "$CM_BUILD_DIR/Otoparkotomasyonu"
+          npx cap sync ios
 
       - name: Build iOS app
         script: |
+          cd "$CM_BUILD_DIR/Otoparkotomasyonu"
           xcodebuild \
             -workspace "$XCODE_WORKSPACE" \
             -scheme "$XCODE_SCHEME" \
@@ -38,4 +44,4 @@ workflows:
             archive
 
     artifacts:
-      - "*.xcarchive/**"
+      - "/Users/builder/clone/Park360.xcarchive/**"
