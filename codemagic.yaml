@@ -30,6 +30,13 @@ workflows:
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
           npx cap sync ios
 
+      - name: Find Xcode workspace
+        script: |
+          cd "$CM_BUILD_DIR/Otoparkotomasyonu"
+          find ios -maxdepth 5 \( -name "*.xcworkspace" -o -name "*.xcodeproj" \) -print
+          ls -la ios
+          ls -la ios/App
+
       - name: Build iOS app
         script: |
           cd "$CM_BUILD_DIR/Otoparkotomasyonu"
